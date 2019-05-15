@@ -1,0 +1,35 @@
+﻿@model MyLibrary.ViewModels.AddBookVM
+@{
+    ViewBag.Title = "AddBook";
+}
+
+<head>
+    <meta charset="utf-8">
+    <link href="~/Content/add.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        <div class="add">
+            <h2>Add new book</h2>
+            <div class="inputs">
+                <label>@Html.DisplayNameFor(m => m.book.title):</label>
+                <div>@Html.EditorFor(m => m.book.title)</div>
+                <div>
+                    @Html.ValidationMessageFor(model => model.book.title, "", new { @class = "text-danger" })
+                </div>
+
+                <label>@Html.DisplayNameFor(m => m.book.author):</label>
+                <div>@Html.EditorFor(m => m.book.author)</div>
+                <div>
+                    @Html.ValidationMessageFor(model => model.book.author, "", new { @class = "text-danger" })
+                </div>
+
+                <label>@Html.DisplayNameFor(m => m.book.year):</label>
+                <div>@Html.EditorFor(m => m.book.year)</div>
+
+                <input type="submit" value="ADD BOOK">
+            </div>
+        </div>
+    }
+</body>

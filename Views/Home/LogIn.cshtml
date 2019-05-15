@@ -1,0 +1,49 @@
+﻿@model MyLibrary.ViewModels.LogInVM
+
+@{
+    ViewBag.Title = "LogIn";
+}
+
+<style>
+    div > div {
+        color: red;
+    }
+</style>
+
+<head>
+    <meta charset="utf-8">
+    <title>logowanie</title>
+    <link href="~/Content/logStyle.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    @using (Html.BeginForm())
+    {
+        <section id="log">
+            <h2>LOG IN</h2>
+            <div class="inputy">
+                <label>@Html.DisplayNameFor(m => m.username)</label>
+                @Html.EditorFor(m => m.username)
+                <div>
+                    @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" })
+                </div>
+
+                <label>@Html.DisplayNameFor(m => m.password)</label>
+                @Html.EditorFor(m => m.password)
+                <div>
+                    @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div id="messege">
+                @ViewBag.Login
+            </div>
+
+            <input type="submit" value="LOG IN">
+
+
+            <h3>OR</h3>
+
+            <input type="button" value="SIGN UP" onclick="location.href='@Url.Action("SignUp", "Home")'">
+        </section>
+    }
+</body>

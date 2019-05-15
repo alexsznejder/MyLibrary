@@ -1,0 +1,56 @@
+﻿@model MyLibrary.ViewModels.SignUpVM
+
+@{
+    ViewBag.Title = "SignUp";
+}
+
+<style>
+    div > div {
+        color: red;
+    }
+</style>
+
+<head>
+    <meta charset="utf-8">
+    <title>rejestracja</title>
+    <link href="~/Content/logStyle.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    @using (Html.BeginForm())
+    {
+        <section id="log">
+            <h2>SIGN UP</h2>
+            <div class="inputy">
+                <label>@Html.DisplayNameFor(m => m.username)</label>
+                @Html.EditorFor(m => m.username)
+                <div>
+                    @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" })
+                </div>
+
+                <label>@Html.DisplayNameFor(m => m.password)</label>
+                @Html.EditorFor(m => m.password)
+                <div>
+                    @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+                </div>
+
+                <label>@Html.DisplayNameFor(m => m.confirmedpassword)</label>
+                @Html.EditorFor(m => m.confirmedpassword)
+                <div>
+                    @Html.ValidationMessageFor(model => model.confirmedpassword, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div id="messege">
+                @ViewBag.TheSame
+                @ViewBag.Password
+            </div>
+
+            <input type="submit" value="SIGN UP">
+
+            <div>
+                <h3><span>OR</span></h3>
+            </div>
+            <input type="button" value="LOG IN" onclick="location.href='@Url.Action("LogIn", "Home")'">
+        </section>
+    }
+</body>

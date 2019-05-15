@@ -1,0 +1,100 @@
+﻿@charset "utf-8";
+
+h2 {
+    padding: 5px;
+    border-bottom: 1px solid lightgray;
+}
+
+h2 {
+    margin-top: 70px;
+}
+
+h3 {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    margin-top: 10px;
+}
+
+    h3:before, h3:after {
+        content: "";
+        flex: 1 1;
+        border-bottom: 1px solid lightgray;
+        margin: auto;
+    }
+
+h3:before {
+    margin-right: 10px;
+}
+
+h3:after {
+    margin-left: 10px;
+}
+
+#log {
+    width: 500px;
+    margin: auto;
+    position: static;
+}
+
+body {
+    font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+}
+
+input[type=text], input[type=password] {
+    border: 1px solid black;
+    font-size: 14px;
+    padding: 8px 12px;
+    margin: 8px 0px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+    input[type=text]:hover, input[type=password]:hover {
+        margin: 7.5px 0px;
+        border: 1.5px solid black;
+    }
+
+input[type=submit], input[type=button] {
+    padding: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 1px 2px lightgray;
+    width: 100%;
+    cursor: pointer;
+}
+
+input[type=submit] {
+    margin: 28px 0px;
+    color: white;
+    border: 1px solid #EA5405;
+    background: #F96B21;
+    text-shadow: 0px 1px 1px black;
+}
+
+input[type=button] {
+    border: 1.5px solid #EA5405;
+    color: #EA5405;
+    background: white;
+    text-shadow: 0px 1px 1px lightgray;
+    margin-bottom: 50px;
+    margin-top: 40px;
+}
+
+input[type=submit]:hover {
+    border: 1.5px solid #EA5405;
+    color: #EA5405;
+    background: white;
+    margin: 27.5px 0px;
+    text-shadow: 0px 1px 1px lightgray;
+}
+
+input[type=button]:hover {
+    margin-bottom: 50.5px;
+    margin-top: 40.5px;
+    color: white;
+    border: 1px solid #EA5405;
+    background: #F96B21;
+    text-shadow: 0px 1px 1px black;
+}

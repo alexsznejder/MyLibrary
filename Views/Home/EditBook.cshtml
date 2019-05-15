@@ -1,0 +1,53 @@
+﻿@model MyLibrary.ViewModels.EditBookVM
+@{
+    ViewBag.Title = "EditBook";
+}
+
+<style>
+    .inputs > div:first-of-type, .inputs > label:first-of-type {
+        display: none;
+    }
+    .userid {
+        display: none;
+    }
+</style>
+
+<head>
+    <meta charset="utf-8">
+    <link href="~/Content/edit.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        <div class="add">
+            <h2>Edit book</h2>
+            <div class="inputs">
+                <label>@Html.DisplayNameFor(m => m.book.bookId):</label>
+                <div>@Html.EditorFor(m => m.book.bookId)</div>
+
+                <label>@Html.DisplayNameFor(m => m.book.title):</label>
+                <div>@Html.EditorFor(m => m.book.title)</div>
+
+                <label>@Html.DisplayNameFor(m => m.book.author):</label>
+                <div>@Html.EditorFor(m => m.book.author)</div>
+
+                <label>@Html.DisplayNameFor(m => m.book.year):</label>
+                <div>@Html.EditorFor(m => m.book.year)</div>
+
+                <div class="userid">
+                    <label>@Html.DisplayNameFor(m => m.book.userId):</label>
+                    <div>@Html.EditorFor(m => m.book.userId)</div>
+                </div>
+
+                <div class="read">
+                    <label>Read: @Html.EditorFor(m => m.book.read)</label>
+                </div>
+
+                <div class="but">
+                    <input type="submit" value="EDIT BOOK">
+                    <input type="button" value="DELETE BOOK" onclick="location.href='@Url.Action("DeleteBook", "Home", new {id = Model.book.bookId})'">
+                </div>
+            </div>
+        </div>
+    }
+</body>

@@ -1,0 +1,36 @@
+﻿<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My library</title>
+    <link href="~/Content/layout.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="header">
+        <h1><a href="@Url.Action("Index", "Home")">My private library</a></h1>
+    </div>
+    <div class="nav">
+        <a href="@Url.Action("BookList", "Home")">List of books</a>
+        <a href="@Url.Action("MyFavorite", "Home")">My favorite</a>
+        @if (Session["username"] != null)
+        {
+            <a href="@Url.Action("AddBook", "Home")">Add new book</a>
+            <div class="username">
+                <h7>Hi, </h7>
+                @Session["username"].ToString()
+            </div>
+            <a href="@Url.Action("LogOut", "Home")">Log out</a>
+        }
+        else
+        {
+            <a href="@Url.Action("LogIn", "Home")">Log in</a>
+        }
+    </div>
+
+    <div class="body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Projekt ASP.NET Aleksandra Sznejder</p>
+        </footer>
+    </div>
+</body>
